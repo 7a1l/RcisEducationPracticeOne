@@ -25,8 +25,11 @@
 // //------------------------------------------------------------------------------------------------------------
 // import 'dart:io';
 // void main(){
-//   int a  = 1;
-//   List<List<int>> nums = List.generate(10, (i) => List.generate(10, (j) => 0));
+//   stdout.write('введите число: ');
+//   try{
+//   int a = int.parse(stdin.readLineSync()!);
+//   List<List<int>> nums = List.generate(a, (i) => List.generate(a, (j) => 0));
+
 //   for(int i = 0; i<nums.length; i++){
 //     stdout.write('[');
 //     for(int j = 0; j<nums.length; j++){
@@ -34,15 +37,15 @@
 //         nums[i][j] = 1;
 //       }else {
 //         nums[i][j] = nums[i-1][j] + nums[i][j-1]; 
-        
 //       }
-
 //      stdout.write('${nums[i][j]}\t ');
 //     }
 //     stdout.write(']');
 //     stdout.write('\n');
 //   }
-
+//   }catch(e){
+//     print('вы ввели не число!');
+//   }
 // }
 // //zadanie 4
 // //---------------------------------------------------------------------------------------------------------------------
