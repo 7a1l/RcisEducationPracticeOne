@@ -8,7 +8,9 @@ import 'dart:io';
 //   int sumwin = 0;
 //   List<int> win = [];
 //   var tickets = {};
+// try{
 //   List<String> lines = File('input.txt').readAsLinesSync();  
+
 //   int sumLines = 0;
 //      for (String line in lines) {
 //       if(sumLines == 0){
@@ -60,12 +62,16 @@ import 'dart:io';
 //     }
 //   }
 //   await File('output.txt').writeAsString(res);
+//   }catch(e){
+//   print('ошибка!');
+// }
 // }
 //------------------------------------------------------------------------------------------
 //zadanie 2
             // void main() {
             //   String nums = '';
             //   String otv = '';
+            //   try{
             //   File('nums.txt').readAsString().then((String a) {
             //     for (int k = 0; k < a.length; k++) {
             //       for (int i = 0; i < a[k].length; i++) {
@@ -84,61 +90,65 @@ import 'dart:io';
             //           }
             //         }
             //       }
-            //       var zxc1 = File('nums.txt').writeAsString(otv);
+            //       var zxc = File('nums.txt').writeAsString(otv);
             //     }
             //   });
+            //   }catch(e){
+            //     print('ошибка!');
+            //   }
             // }
 
 //--------------------------------------------------------------------------------------------
 //zadanie 3
-        void main() {
-          var nums = '';
-          var otv = '';
-          List<int> chisla = [];
-          File('nums.txt').readAsString().then((String a) {
-            a+= ' ';
-            for (int k = 0; k < a.length; k++) {
-              for (int i = 0; i < a[k].length; i++) {
-                if (a[k][i] != " ") {
-                  nums += a[k][i];
-                }
-                if (a[k][i] == " ") {
-                  try {
-                    int nums1 = int.parse(nums);  
-                      otv += "$nums ";
-                    nums = "";
-                    chisla.add(nums1);
-                  } catch (e) {
-                    print('это не число!');
-                    continue;
-                  }
-                }
-              }
-            }
-          ne_main(chisla);
-            
-          });
-          }
+// import 'dart:io';
 
-        void ne_main(List<int> height) {
-          int left = 0;
-          int right = height.length - 1;
-          int max = 0;
+// void main() {
+//   var nums = '';
+//   var otv = '';
+//   List<int> chisla = [];
+//    File('qwe123.txt').readAsString().then((String a) {
+//      a+= ' ';
+//     for (int k = 0; k < a.length; k++) {
+//       for (int i = 0; i < a[k].length; i++) {
+//         if (a[k][i] != " ") {
+//           nums += a[k][i];
+//         }
+//         if (a[k][i] == " ") {
+//           try {
+//             int nums1 = int.parse(nums);  
+//               otv += "$nums ";
+//             nums = "";
+//             chisla.add(nums1);
+//           } catch (e) {
+//             print('это не число!');
+//             continue;
+//           }
+//         }
+//       }
+//     }
+//   ne_main(chisla);
+//    });
+//    }
 
-          while (left != right) {
-            int distance = (left - right).abs();
-            int otv = 0;
-            if (height[left] < height[right]) {
-              otv = height[left] * distance;
-              left++;
-            } else {
-              otv = height[right] * distance;
-              right--;
-            }
-            if (otv > max) {
-              max = otv;
-            }
-          }
-          print(max);
-        }
+// void ne_main(List<int> height) {
+//   int left = 0;
+//   int right = height.length - 1;
+//   int max = 0;
+
+//   while (left != right) {
+//     int distance = (left - right).abs();
+//     int otv = 0;
+//     if (height[left] < height[right]) {
+//       otv = height[left] * distance;
+//       left++;
+//     } else {
+//       otv = height[right] * distance;
+//       right--;
+//     }
+//     if (otv > max) {
+//       max = otv;
+//     }
+//   }
+//   print(max);
+// }
 //--------------------------------------------------------------------------------------------
