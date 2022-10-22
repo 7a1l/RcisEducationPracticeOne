@@ -1,4 +1,4 @@
-// import 'dart:io';
+import 'dart:io';
 //zadanie 1
 // void main() async {
 //   String nums = "";
@@ -91,53 +91,54 @@
 
 //--------------------------------------------------------------------------------------------
 //zadanie 3
-        // void main() {
-        //   var nums = '';
-        //   var otv = '';
-        //   List<int> chisla = [];
-        //   File('nums.txt').readAsString().then((String a) {
-        //     for (int k = 0; k < a.length; k++) {
-        //       for (int i = 0; i < a[k].length; i++) {
-        //         if (a[k][i] != " ") {
-        //           nums += a[k][i];
-        //         }
-        //         if (a[k][i] == " ") {
-        //           try {
-        //             int nums1 = int.parse(nums);  
-        //               otv += "$nums ";
-        //             nums = "";
-        //             chisla.add(nums1);
-        //           } catch (e) {
-        //             print('это не число!');
-        //             continue;
-        //           }
-        //         }
-        //       }
-        //     }
-        //   ne_main(chisla);
+        void main() {
+          var nums = '';
+          var otv = '';
+          List<int> chisla = [];
+          File('nums.txt').readAsString().then((String a) {
+            a+= ' ';
+            for (int k = 0; k < a.length; k++) {
+              for (int i = 0; i < a[k].length; i++) {
+                if (a[k][i] != " ") {
+                  nums += a[k][i];
+                }
+                if (a[k][i] == " ") {
+                  try {
+                    int nums1 = int.parse(nums);  
+                      otv += "$nums ";
+                    nums = "";
+                    chisla.add(nums1);
+                  } catch (e) {
+                    print('это не число!');
+                    continue;
+                  }
+                }
+              }
+            }
+          ne_main(chisla);
             
-        //   });
-        //   }
+          });
+          }
 
-        // void ne_main(List<int> height) {
-        //   int left = 0;
-        //   int right = height.length - 1;
-        //   int max = 0;
+        void ne_main(List<int> height) {
+          int left = 0;
+          int right = height.length - 1;
+          int max = 0;
 
-        //   while (left != right) {
-        //     int distance = (left - right).abs();
-        //     int otv = 0;
-        //     if (height[left] < height[right]) {
-        //       otv = height[left] * distance;
-        //       left++;
-        //     } else {
-        //       otv = height[right] * distance;
-        //       right--;
-        //     }
-        //     if (otv > max) {
-        //       max = otv;
-        //     }
-        //   }
-        //   print(max);
-        // }
+          while (left != right) {
+            int distance = (left - right).abs();
+            int otv = 0;
+            if (height[left] < height[right]) {
+              otv = height[left] * distance;
+              left++;
+            } else {
+              otv = height[right] * distance;
+              right--;
+            }
+            if (otv > max) {
+              max = otv;
+            }
+          }
+          print(max);
+        }
 //--------------------------------------------------------------------------------------------
